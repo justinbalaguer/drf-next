@@ -38,6 +38,7 @@ export default function List(props: Readonly<{
 
   return (
     <div>
+      {taskList.length === 0 && <p>Loading...</p>}
       {taskList?.map((task) => (
         <div key={task.id} className={`border border-gray rounded my-5 p-5 ${task.completed ? "bg-[#b8c2b9] text-[#382b26]" : "bg-[#382b26] text-[#b8c2b9]"}`}>
           <p><span className="font-bold">Name:</span> {task.name}</p>
